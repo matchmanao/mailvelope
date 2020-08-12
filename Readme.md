@@ -6,7 +6,7 @@ Mailvelope is a browser extension for Google Chrome and Firefox that allows secu
 
 ## MatchManao changes
 
-  - Don't add the frame to element.ariaHidden input areas & set MIN_EDIT_HEIGHT=0
+  - Don't add m-encrypt-container frame to element.ariaHidden input areas & set MIN_EDIT_HEIGHT=0
   - Change m-encrypt-container frame to only show a key (🔑) emoji and no x button & mailvelope logo
   - Add all public keys to recipients by default
 
