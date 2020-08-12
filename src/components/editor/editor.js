@@ -143,6 +143,12 @@ export default class Editor extends React.Component {
    * @param {Array} options.recipients   recipients gather from the webmail ui
    */
   onPublicKeyUserids({keys, to, cc}) {
+    // Add all public keys to recipients by default
+    to = keys.map(key => ({
+      email: key.email,
+      fingerprint: key.fingerprint,
+      displayId: `${key.userId} - ${key.keyId}`
+    }));
     this.setState({publicKeys: keys, recipients: to, recipientsCc: cc, showRecipientsCc: cc.length > 0});
   }
 
