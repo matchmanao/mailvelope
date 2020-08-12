@@ -4,6 +4,12 @@
 
 Mailvelope is a browser extension for Google Chrome and Firefox that allows secure email communication based on the OpenPGP standard. It can be configured to work with arbitrary Webmail provider.
 
+## MatchManao changes
+
+  - Don't add the frame to element.ariaHidden input areas & set MIN_EDIT_HEIGHT=0
+  - Change m-encrypt-container frame to only show a key (🔑) emoji and no x button & mailvelope logo
+  - Add all public keys to recipients by default
+
 ## OpenPGP backends
 
 Mailvelope uses the following OpenPGP implementation
