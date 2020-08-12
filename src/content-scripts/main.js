@@ -16,7 +16,7 @@ import EncryptFrame from './encryptFrame';
 
 const PGP_HEADER = /-----BEGIN\sPGP\s(SIGNED|MESSAGE|PUBLIC)/;
 const PGP_FOOTER = /END\sPGP\s(MESSAGE|SIGNATURE|PUBLIC KEY BLOCK)-----/;
-const MIN_EDIT_HEIGHT = 84;
+const MIN_EDIT_HEIGHT = 0;
 const OBSERVER_TIMEOUT = 300; // ms
 
 let domObserver = null;
@@ -237,7 +237,7 @@ function findPGPRanges() {
 
 function findEditable() {
   // find textareas and elements with contenteditable attribute, filter out <body>
-  let editable = Array.from(document.querySelectorAll('[contenteditable="true"], textarea')).filter(isVisible).filter(element => element.tagName.toLowerCase() !== 'body');
+  let editable = Array.from(document.querySelectorAll('[contenteditable="true"], textarea')).filter(isVisible).filter(element => element.tagName.toLowerCase() !== 'body' && !element.ariaHidden);
   const iframes = Array.from(document.getElementsByTagName('iframe')).filter(isVisible);
   const dynFrames = [];
   const origFrames = [];
